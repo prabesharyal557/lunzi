@@ -126,6 +126,15 @@ const img = {
   // Specials
   sushi: 'https://images.pexels.com/photos/31225297/pexels-photo-31225297.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   deluxeSeafood: 'https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+
+  // Gallery & Ambience Images
+  interior: 'https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  outdoor: 'https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  privateroom: 'https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  outdoor2: 'https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  interior2: 'https://images.pexels.com/photos/2253643/pexels-photo-2253643.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  privateroom2: 'https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  noodles: 'https://images.pexels.com/photos/2347311/pexels-photo-2347311.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
 };
 
 const menuCategories: MenuCategory[] = [
@@ -288,73 +297,6 @@ const menuCategories: MenuCategory[] = [
   },
 ];
 
-export default function LunziKejiMenu() {
-  const [activeCategory, setActiveCategory] = useState(menuCategories[0].name);
-
-  const currentCategoryData = useMemo(() => {
-    return menuCategories.find((cat) => cat.name === activeCategory) || menuCategories[0];
-  }, [activeCategory]);
-
-  return (
-    <div className="min-h-screen bg-neutral-900 text-neutral-100 p-6">
-      {/* Navigation Header */}
-      <header className="flex justify-between items-center mb-8 pb-4 border-b border-neutral-800">
-        <h1 className="text-2xl font-bold tracking-tight text-amber-500">Lunzi Keji</h1>
-        <a
-          href={reserveLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-amber-500 hover:bg-amber-600 text-black px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition"
-        >
-          Reserve Table <ArrowUpRight className="w-4 h-4" />
-        </a>
-      </header>
-
-      {/* Category Tabs */}
-      <div className="flex gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
-        {menuCategories.map((cat) => (
-          <button
-            key={cat.name}
-            onClick={() => setActiveCategory(cat.name)}
-            className={`px-4 py-2 rounded-full whitespace-nowrap text-sm font-medium transition ${
-              activeCategory === cat.name
-                ? 'bg-amber-500 text-black'
-                : 'bg-neutral-800 text-neutral-400 hover:text-white'
-            }`}
-          >
-            {cat.name}
-          </button>
-        ))}
-      </div>
-
-      {/* Item Display Grid */}
-      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {currentCategoryData.items.map((menuItem) => (
-          <div
-            key={menuItem.name}
-            className="bg-neutral-800 rounded-xl overflow-hidden shadow-lg border border-neutral-700/50 flex flex-col"
-          >
-            <img
-              src={menuItem.image}
-              alt={menuItem.name}
-              className="w-full h-48 object-cover"
-              loading="lazy"
-            />
-            <div className="p-4 flex flex-col flex-1 justify-between">
-              <div>
-                <div className="flex justify-between items-start gap-2 mb-2">
-                  <h3 className="font-semibold text-lg text-neutral-100">{menuItem.name}</h3>
-                  <span className="text-amber-400 font-mono font-bold">NPR {menuItem.price}</span>
-                </div>
-                <p className="text-neutral-400 text-sm leading-relaxed">{menuItem.description}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </main>
-    </div>
-  );
-}
 const galleryImages = [
   { src: img.interior, label: 'Interior', title: 'The Lunzi Keji welcome' },
   { src: img.outdoor, label: 'Outdoor', title: 'A garden above the city' },
@@ -372,7 +314,7 @@ const reviews = [
   { quote: 'One of Kathmandu’s most memorable dining rooms. The terrace, the koi pond, the hospitality — all exceptional.', name: 'Maya S.', detail: 'Business dinner' },
 ];
 
-function App() {
+export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('Signature Main Course');
   const [activeGallery, setActiveGallery] = useState<typeof galleryImages[number] | null>(null);
@@ -461,5 +403,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
