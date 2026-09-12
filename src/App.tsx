@@ -13,8 +13,29 @@ import {
   X,
 } from 'lucide-react';
 
+// --- Types & Helper Functions ---
+interface MenuItem {
+  name: string;
+  price: number;
+  description: string;
+  image: string;
+}
+
+interface MenuCategory {
+  name: string;
+  items: MenuItem[];
+}
+
+const item = (name: string, price: number, description: string, image: string): MenuItem => ({
+  name,
+  price,
+  description,
+  image,
+});
+
 const whatsappNumber = '9779709105218';
 const reserveLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hello Lunzi Keji, I would like to reserve a table.')}`;
+
 const img = {
   // Beer
   gorkhaStrong: 'https://images.pexels.com/photos/24389563/pexels-photo-24389563.jpeg?_gl=1*1cohvxy*_ga*NjI2MDgyODUuMTc4ODQ5ODcxMg..*_ga_8JE65Q40S6*czE3ODkxNzgyMTkkbzIkZzEkdDE3ODkxNzgzMTMkajYwJGwwJGgw',
@@ -35,8 +56,6 @@ const img = {
   vanillaIce: 'https://images.pexels.com/photos/8104733/pexels-photo-8104733.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   strawIce: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYmcMr1o3eW9n6xGR0G472DvdnLHdxLin5xZGBjd0Eb0OAi5iW3nr_6GGn189VHKFfLBkRf6nYIR40ZC_SlRHeJHAQ3YLG583CkmpeYQ&s=10',
   chocoIce: 'https://images.pexels.com/photos/1362534/pexels-photo-1362534.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-
-  
 
   // Coffee & Tea
   masalaChai: 'https://images.pexels.com/photos/36662612/pexels-photo-36662612.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -107,14 +126,6 @@ const img = {
   // Specials
   sushi: 'https://images.pexels.com/photos/31225297/pexels-photo-31225297.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   deluxeSeafood: 'https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-
-  // Atmosphere
-  interior: 'https://images.pexels.com/photos/26729398/pexels-photo-26729398.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  interior2: 'https://images.pexels.com/photos/27305319/pexels-photo-27305319.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  outdoor: 'https://images.pexels.com/photos/18823963/pexels-photo-18823963.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  outdoor2: 'https://images.pexels.com/photos/18823969/pexels-photo-18823969.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  privateroom: 'https://images.pexels.com/photos/17109123/pexels-photo-17109123.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  privateroom2: 'https://images.pexels.com/photos/12919158/pexels-photo-12919158.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
 };
 
 const menuCategories: MenuCategory[] = [
@@ -147,7 +158,6 @@ const menuCategories: MenuCategory[] = [
       item('Chocolate', 350, 'Rich, dark and deeply comforting.', img.chocoIce),
     ],
   },
-
   {
     name: 'Hot Coffee & Tea',
     items: [
@@ -219,7 +229,6 @@ const menuCategories: MenuCategory[] = [
     name: 'Rice',
     items: [
       item('Plain Rice', 80, 'Fragrant grains carrying the flavour of the wok.', img.plainRice),
-     
     ],
   },
   {
@@ -279,6 +288,73 @@ const menuCategories: MenuCategory[] = [
   },
 ];
 
+export default function LunziKejiMenu() {
+  const [activeCategory, setActiveCategory] = useState(menuCategories[0].name);
+
+  const currentCategoryData = useMemo(() => {
+    return menuCategories.find((cat) => cat.name === activeCategory) || menuCategories[0];
+  }, [activeCategory]);
+
+  return (
+    <div className="min-h-screen bg-neutral-900 text-neutral-100 p-6">
+      {/* Navigation Header */}
+      <header className="flex justify-between items-center mb-8 pb-4 border-b border-neutral-800">
+        <h1 className="text-2xl font-bold tracking-tight text-amber-500">Lunzi Keji</h1>
+        <a
+          href={reserveLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-amber-500 hover:bg-amber-600 text-black px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition"
+        >
+          Reserve Table <ArrowUpRight className="w-4 h-4" />
+        </a>
+      </header>
+
+      {/* Category Tabs */}
+      <div className="flex gap-2 overflow-x-auto pb-4 mb-8 no-scrollbar">
+        {menuCategories.map((cat) => (
+          <button
+            key={cat.name}
+            onClick={() => setActiveCategory(cat.name)}
+            className={`px-4 py-2 rounded-full whitespace-nowrap text-sm font-medium transition ${
+              activeCategory === cat.name
+                ? 'bg-amber-500 text-black'
+                : 'bg-neutral-800 text-neutral-400 hover:text-white'
+            }`}
+          >
+            {cat.name}
+          </button>
+        ))}
+      </div>
+
+      {/* Item Display Grid */}
+      <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {currentCategoryData.items.map((menuItem) => (
+          <div
+            key={menuItem.name}
+            className="bg-neutral-800 rounded-xl overflow-hidden shadow-lg border border-neutral-700/50 flex flex-col"
+          >
+            <img
+              src={menuItem.image}
+              alt={menuItem.name}
+              className="w-full h-48 object-cover"
+              loading="lazy"
+            />
+            <div className="p-4 flex flex-col flex-1 justify-between">
+              <div>
+                <div className="flex justify-between items-start gap-2 mb-2">
+                  <h3 className="font-semibold text-lg text-neutral-100">{menuItem.name}</h3>
+                  <span className="text-amber-400 font-mono font-bold">NPR {menuItem.price}</span>
+                </div>
+                <p className="text-neutral-400 text-sm leading-relaxed">{menuItem.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </main>
+    </div>
+  );
+}
 const galleryImages = [
   { src: img.interior, label: 'Interior', title: 'The Lunzi Keji welcome' },
   { src: img.outdoor, label: 'Outdoor', title: 'A garden above the city' },
