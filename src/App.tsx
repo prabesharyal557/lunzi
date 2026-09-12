@@ -17,43 +17,41 @@ const whatsappNumber = '9779709105218';
 const reserveLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hello Lunzi Keji, I would like to reserve a table.')}`;
 const img = {
   // Beer
-  gorkhaStrong: 'https://images.pexels.com/photos/1552630/pexels-photo-1552630.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  gorkhaStrong: 'https://images.pexels.com/photos/24389563/pexels-photo-24389563.jpeg?_gl=1*1cohvxy*_ga*NjI2MDgyODUuMTc4ODQ5ODcxMg..*_ga_8JE65Q40S6*czE3ODkxNzgyMTkkbzIkZzEkdDE3ODkxNzgzMTMkajYwJGwwJGgw',
   gorkhaPilsner: 'https://images.pexels.com/photos/1267682/pexels-photo-1267682.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   gorkhaCraft: 'https://images.pexels.com/photos/5537929/pexels-photo-5537929.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   turboBeer: 'https://images.pexels.com/photos/1089930/pexels-photo-1089930.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   glacierBeer: 'https://images.pexels.com/photos/1672304/pexels-photo-1672304.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
 
   // Milkshakes & Lassi
-  chocoShake: 'https://images.pexels.com/photos/103566/pexels-photo-103566.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  strawberryShake: 'https://images.pexels.com/photos/32469289/pexels-photo-32469289.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  vanillaShake: 'https://images.pexels.com/photos/3727250/pexels-photo-3727250.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  chocoShake: 'https://images.pexels.com/photos/18142621/pexels-photo-18142621.jpeg?_gl=1*tpjwlo*_ga*NjI2MDgyODUuMTc4ODQ5ODcxMg..*_ga_8JE65Q40S6*czE3ODkxNzgyMTkkbzIkZzEkdDE3ODkxNzgzODckajU1JGwwJGgw',
+  strawberryShake: 'https://images.pexels.com/photos/2638026/pexels-photo-2638026.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  vanillaShake: 'https://images.pexels.com/photos/33694865/pexels-photo-33694865.jpeg?_gl=1*1wka7qm*_ga*NjI2MDgyODUuMTc4ODQ5ODcxMg..*_ga_8JE65Q40S6*czE3ODkxNzgyMTkkbzIkZzEkdDE3ODkxNzg1NjUkajIzJGwwJGgw',
   oreoShake: 'https://images.pexels.com/photos/2638026/pexels-photo-2638026.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   plainLassi: 'https://images.pexels.com/photos/18142603/pexels-photo-18142603.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  bananaLassi: 'https://images.pexels.com/photos/5947072/pexels-photo-5947072.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  bananaLassi: 'https://images.pexels.com/photos/18142611/pexels-photo-18142611.jpeg?_gl=1*nub7k5*_ga*NjI2MDgyODUuMTc4ODQ5ODcxMg..*_ga_8JE65Q40S6*czE3ODkxNzgyMTkkbzIkZzEkdDE3ODkxNzg2MzMkajQ0JGwwJGgw',
 
   // Ice Cream
   vanillaIce: 'https://images.pexels.com/photos/8104733/pexels-photo-8104733.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  strawIce: 'https://images.pexels.com/photos/1352278/pexels-photo-1352278.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  strawIce: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYmcMr1o3eW9n6xGR0G472DvdnLHdxLin5xZGBjd0Eb0OAi5iW3nr_6GGn189VHKFfLBkRf6nYIR40ZC_SlRHeJHAQ3YLG583CkmpeYQ&s=10',
   chocoIce: 'https://images.pexels.com/photos/1362534/pexels-photo-1362534.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
 
-  // Hookah
-  hookah1: 'https://images.pexels.com/photos/16978577/pexels-photo-16978577.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  hookah2: 'https://images.pexels.com/photos/8438258/pexels-photo-8438258.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  
 
   // Coffee & Tea
   masalaChai: 'https://images.pexels.com/photos/36662612/pexels-photo-36662612.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  blackTea: 'https://images.pexels.com/photos/1493080/pexels-photo-1493080.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  lemonTea: 'https://images.pexels.com/photos/1414110/pexels-photo-1414110.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  blackTea: 'https://cdn.shopify.com/s/files/1/0022/1393/7252/articles/20221114103112-dark-tea-recipe-blog_2048x2048_crop_center.jpg.webp?v=1668422229',
+  lemonTea: 'https://images.pexels.com/photos/27489187/pexels-photo-27489187.jpeg?_gl=1*ggs95i*_ga*NjI2MDgyODUuMTc4ODQ5ODcxMg..*_ga_8JE65Q40S6*czE3ODkxNzgyMTkkbzIkZzEkdDE3ODkxNzg5NDgkajMxJGwwJGgw',
   greenTea: 'https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  espresso: 'https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  espresso: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFi1ZYCnjnZjbE2XrYUkjNVvQ2vRwYQeAXEbtuE5laSA&s=10',
   americano: 'https://images.pexels.com/photos/6830390/pexels-photo-6830390.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  latte: 'https://images.pexels.com/photos/350478/pexels-photo-350478.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  latte: 'https://images.pexels.com/photos/459489/pexels-photo-459489.jpeg?_gl=1*10omtap*_ga*NjI2MDgyODUuMTc4ODQ5ODcxMg..*_ga_8JE65Q40S6*czE3ODkxNzgyMTkkbzIkZzEkdDE3ODkxNzkyMTEkajUyJGwwJGgw',
   cappuccino: 'https://images.pexels.com/photos/6747870/pexels-photo-6747870.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
 
   // Cold Drinks & Special Drinks
   cola: 'https://images.pexels.com/photos/4113632/pexels-photo-4113632.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   fanta: 'https://images.pexels.com/photos/1292294/pexels-photo-1292294.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  sprite: 'https://images.pexels.com/photos/2789328/pexels-photo-2789328.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  sprite: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfqr9tcno0zXUIQXU69awTB-4GBE9YuwCKv5XcCRIRlg&s=10',
   sodaFloat: 'https://images.pexels.com/photos/2983101/pexels-photo-2983101.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   lemonade: 'https://images.pexels.com/photos/33107433/pexels-photo-33107433.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   mojito: 'https://images.pexels.com/photos/4099238/pexels-photo-4099238.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -61,7 +59,7 @@ const img = {
 
   // Iced Coffee
   icedCoffee: 'https://images.pexels.com/photos/4869290/pexels-photo-4869290.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  icedTea: 'https://images.pexels.com/photos/792613/pexels-photo-792613.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
+  icedTea: 'https://www.torani.com/media/catalog/product/l/e/lemon_iced_tea.jpg?optimize=medium&fit=bounds&height=815&width=650&canvas=650:815',
 
   // Momo & Dumplings
   chickenMomo: 'https://images.pexels.com/photos/27039841/pexels-photo-27039841.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
@@ -149,16 +147,7 @@ const menuCategories: MenuCategory[] = [
       item('Chocolate', 350, 'Rich, dark and deeply comforting.', img.chocoIce),
     ],
   },
-  {
-    name: 'Hookah',
-    items: [
-      item('Lady Killer', 1350, 'Aromatic house blends for long evenings outdoors.', img.hookah1),
-      item('101', 1150, 'A balanced, crowd-pleasing signature mix.', img.hookah2),
-      item('Mini Mint', 1150, 'Cool, clean and effortlessly fresh.', img.hookah1),
-      item('Blueberry', 1150, 'Sweet, fruity and softly aromatic.', img.hookah2),
-      item('Express Secret', 1150, 'A house blend we keep quietly under wraps.', img.hookah1),
-    ],
-  },
+
   {
     name: 'Hot Coffee & Tea',
     items: [
@@ -230,13 +219,7 @@ const menuCategories: MenuCategory[] = [
     name: 'Rice',
     items: [
       item('Plain Rice', 80, 'Fragrant grains carrying the flavour of the wok.', img.plainRice),
-      item('Egg Fried Rice', 250, 'Wok-charred rice folded with golden egg.', img.eggFriedRice),
-      item('Egg Fried Rice with Beef', 780, 'Hearty, beef-rich and deeply savoury.', img.beefRice),
-      item('Chicken Rice Bowl', 700, 'A generous bowl built for one.', img.chickenRice),
-      item('Lamb Rice Bowl', 790, 'Tender lamb over fragrant rice.', img.lambRice),
-      item('Kung Pao Chicken Rice', 690, 'Spiced chicken, peanuts and wok rice.', img.kungPao),
-      item('Modern Rice Set', 890, 'A curated set for the curious table.', img.plainRice),
-      item('Junior Meal Box Chicken', 680, 'A complete little box, built for younger guests.', img.chickenRice),
+     
     ],
   },
   {
